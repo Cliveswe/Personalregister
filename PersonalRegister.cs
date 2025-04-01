@@ -1,4 +1,5 @@
-﻿namespace PersonalRegisterMain
+﻿
+namespace PersonalRegisterMain
 {
 
     internal class PersonalRegister
@@ -51,6 +52,7 @@
             string getUserInput;
             int menuChoice = 3;
 
+            PopulateEmployelist();
             //Run the application until the user chooses a menu option to exit.
             while (!exitProgram)
             {
@@ -78,6 +80,16 @@
             }//while
 
         }//Start
+
+        /// <summary>
+        /// Seed the list of employees.
+        /// </summary>
+        private void PopulateEmployelist()
+        {
+            employeesList.Add(new Person("Clive", "Leddy", 1235));
+            employeesList.Add(new Person("Tom", "Hardy", 1235));
+            employeesList.Add(new Person("Olive", "Fouler", 2351));
+        }
 
         /// <summary>
         /// Execute the entered menu choice. 
