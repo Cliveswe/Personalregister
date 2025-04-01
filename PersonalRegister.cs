@@ -1,5 +1,6 @@
 ﻿namespace PersonalRegisterMain
 {
+
     internal class PersonalRegister
     {
 
