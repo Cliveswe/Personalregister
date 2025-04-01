@@ -12,16 +12,19 @@
             {
                 ChristianName = Surname = string.Empty;
             }//constructor
-            public Person(string firstName, string lastName)
+            public Person(string firstName, string lastName, int pay)
             {
                 ChristianName = firstName.Trim();
                 Surname = lastName.Trim();
+                Pay = pay;
             }//constructor
 
             public string ChristianName { get; }
             public string Surname { get; }
 
-            public override string ToString() => $"{ChristianName} {Surname}";
+            public int Pay { get; }
+
+            public override string ToString() => $"{ChristianName} {Surname} {Pay}";
 
         }//struct
 
@@ -150,21 +153,24 @@
         {
             bool isNewPerson = false;
             person = new Person();
+            int pay = 0;
 
             Console.Write("Enter Christian name: ");
 #pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
             string firstName = Console.ReadLine();
-#pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.
 
             Console.Write("Enter Surname: ");
-#pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
             string lastName = Console.ReadLine();
 #pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.
+
+            Console.Write("Enter pay: ");
+            pay = int.Parse(Console.ReadLine());
+
 
             if (firstName != null || lastName != null)
             {
 #pragma warning disable CS8604 // Possible null reference argument.
-                person = new Person(firstName, lastName);
+                person = new Person(firstName, lastName, pay);
 #pragma warning restore CS8604 // Possible null reference argument.
                 isNewPerson = true;
             }
