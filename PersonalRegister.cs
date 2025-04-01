@@ -4,7 +4,7 @@
     {
 
         /// <summary>
-        /// A structure that hold the Christian name and Surname of a person.
+        /// A structure that hold the Christian name and Surname of a person and their pay.
         /// </summary>
         struct Person
         {
@@ -164,7 +164,9 @@
 #pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.
 
             Console.Write("Enter pay: ");
+#pragma warning disable CS8604 // Possible null reference argument.
             pay = int.Parse(Console.ReadLine());
+#pragma warning restore CS8604 // Possible null reference argument.
 
 
             if (firstName != null || lastName != null)
