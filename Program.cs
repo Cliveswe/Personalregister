@@ -1,10 +1,11 @@
-﻿namespace Personalregister
-{
-    internal class Program
+﻿namespace PersonalRegisterMain
     {
-        static void Main(string[] args)
+    internal class Program
         {
-            Console.WriteLine("Hello, World!");
+        static void Main(string[] args)
+            {
+            PersonalRegister personalRegister = new PersonalRegister();
+            personalRegister.Start();
+            }
         }
     }
-}
